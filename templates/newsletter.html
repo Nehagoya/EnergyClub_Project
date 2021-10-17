@@ -1,0 +1,719 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    /* body css */
+    html,
+    body {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+      background-color: #dddce0;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* navbar css */
+
+    .navbar {
+      padding: 0px 8px;
+    }
+
+    .navbackground {
+      background-color: #26272b !important;
+    }
+
+    .navheadtext {
+      font-family: 'Raleway', sans-serif;
+      margin: 5px 0px;
+    }
+
+    .navheadtext>p {
+      margin-bottom: 5px;
+    }
+
+    #heading {
+      font-size: 20px;
+      margin: 0px;
+      padding: 0px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    @media only screen and (max-width: 850px) {
+      .navicons {
+        margin: 8px 0px;
+        display: none;
+      }
+
+      .navheadtext>p>span {
+        color: rgb(48, 230, 139) !important;
+      }
+    }
+
+    .newsletterheader {
+      display: flex;
+      align-items: center !important;
+      background-color: rgb(0, 0, 182);
+      color: white;
+      height: fit-content;
+    }
+
+    .headercontainer {
+      padding: 40px;
+      width: 800px;
+    }
+
+    .headercontainer>h1 {
+      font-size: 5vw;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .headercontainer {
+        padding: 40px 10px;
+      }
+
+      .headercontainer>h1 {
+        font-size: 7vw;
+      }
+
+      .headercontainer>p {
+        font-size: 3vw !important;
+      }
+    }
+
+    .headercontainer>p {
+      font-size: 1vw;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .maincontainer {
+      margin-top: 20px;
+      display: flex !important;
+      justify-content: space-evenly !important;
+      flex-wrap: wrap-reverse;
+    }
+
+    .sidecontainer {
+      background-color: aliceblue;
+      padding: 10px !important;
+    }
+
+    .leftcontainer {
+      background-color: aliceblue;
+      display: flex;
+      height: auto;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+    }
+
+    .leftcontainer::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    .leftcontainer::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    .leftcontainer::-webkit-scrollbar-thumb {
+      background: #99DEAB;
+    }
+
+    /* Handle on hover */
+    .leftcontainer::-webkit-scrollbar-thumb:hover {
+      background: #31a04f;
+    }
+
+    .leftcontainer>div {
+      display: inline;
+      margin: 4px;
+    }
+
+    .sideline {
+      border-left: 4px solid black;
+      height: 100%;
+    }
+
+    .outercontent {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .content>p {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(143, 143, 143);
+      margin-bottom: 8px !important;
+    }
+
+    .content>i {
+      color: rgb(0, 29, 192);
+      position: relative;
+      top: -6px;
+      left: -18px;
+
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .content>p {
+      font-size: 17px;
+    }
+
+    .rightcontainer {
+      background-color: white;
+    }
+
+    .rightcontainer>h2 {
+      font-size: 4vw;
+      margin-left: 3vw;
+      margin-bottom: 2px !important;
+      margin-top: 4px;
+      font-family: 'Raleway', sans-serif;
+      color: #505050;
+    }
+
+    .carouselimage {
+      width: 100%;
+      max-height: 650px;
+      min-height: 400px;
+    }
+
+    .maincontainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .leftcontainer {
+      border: 10px solid rgba(255, 255, 255, 0.76);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .rightmaincontainer>h2 {
+      font-size: 25px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      color: rgb(105, 105, 105);
+      text-shadow: 0px 4px 3px rgba(255, 255, 255, 0.4),
+        0px 8px 13px rgba(255, 255, 255, 0.1),
+        0px 18px 23px rgba(255, 255, 255, 0.1);
+    }
+
+    @media only screen and (max-width: 750px) {
+      .rightmaincontainer {
+        margin-top: 20px;
+      }
+    }
+
+    .newslettercard:hover {
+      background-color: rgb(0, 0, 182);
+      color: white;
+    }
+
+    .newslettertitle {
+      margin-top: 10px;
+      margin-bottom: 0px;
+      font-size: 26px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+    }
+
+    .newslettercurator {
+      margin-top: 4px !important;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+
+    /* footer css */
+    .site-footer {
+      background-color: #26272b;
+      padding: 45px 0 20px;
+      font-size: 15px;
+      line-height: 24px;
+      color: #737373;
+    }
+
+    .site-footer hr {
+      border-top-color: #bbb;
+      opacity: 0.5
+    }
+
+    .site-footer hr.small {
+      margin: 20px 0
+    }
+
+    .site-footer h6 {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 5px;
+      letter-spacing: 2px
+    }
+
+    .site-footer a {
+      color: #737373;
+    }
+
+    .site-footer a:hover {
+      color: rgb(0, 182, 199);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      padding-left: 0;
+      list-style: none
+    }
+
+    .footer-links li {
+      display: block
+    }
+
+    .footer-links a {
+      color: #737373
+    }
+
+    .footer-links a:active,
+    .footer-links a:focus,
+    .footer-links a:hover {
+      color: rgb(0, 182, 199);
+      text-decoration: none;
+    }
+
+    .footer-links.inline li {
+      display: inline-block
+    }
+
+    .site-footer .social-icons {
+      text-align: right
+    }
+
+    .site-footer .social-icons a {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin-left: 6px;
+      margin-right: 0;
+      border-radius: 100%;
+      background-color: #33353d
+    }
+
+    .copyright-text {
+      margin: 0
+    }
+
+    @media (max-width:991px) {
+      .site-footer [class^=col-] {
+        margin-bottom: 30px
+      }
+    }
+
+    @media (max-width:767px) {
+      .site-footer {
+        padding-bottom: 0
+      }
+
+      .site-footer .copyright-text,
+      .site-footer .social-icons {
+        text-align: center
+      }
+    }
+
+    .social-icons {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin-bottom: 4px
+    }
+
+    .social-icons li.title {
+      margin-right: 15px;
+      text-transform: uppercase;
+      color: #96a2b2;
+      font-weight: 700;
+      font-size: 13px
+    }
+
+    .social-icons a {
+      background-color: #eceeef;
+      color: #818a91;
+      font-size: 16px;
+      display: inline-block;
+      line-height: 44px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      margin-right: 8px;
+      border-radius: 100%;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear
+    }
+
+    .social-icons a:active,
+    .social-icons a:focus,
+    .social-icons a:hover {
+      color: #fff;
+      background-color: #29aafe
+    }
+
+    .social-icons.size-sm a {
+      line-height: 34px;
+      height: 34px;
+      width: 34px;
+      font-size: 14px
+    }
+
+
+    .social-icons a.facebook {
+      background-color: #3b5998;
+      color: white;
+    }
+
+    .social-icons a.twitter {
+      background-color: #00aced;
+      color: white;
+    }
+
+    .social-icons a.linkedin {
+      background-color: #007bb6;
+      color: white;
+    }
+
+    .social-icons a.dribbble {
+      background-color: #ea4c89;
+      color: white;
+    }
+
+    @media (max-width:767px) {
+      .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+      }
+    }
+
+    .contactinfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contactinfo>span {
+      align-items: center;
+    }
+
+    .contactinfo>span>i {
+      margin-right: 5px;
+    }
+
+    .carousel-indicators .active {
+      background-color: rgb(59, 59, 59);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&family=Raleway:wght@500&display=swap');
+  </style>
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark navbackground ">
+    <div class="navicons">
+      <img src="{% static 'img/Mnit_logo.png' %} " height="50px" width="50px" class="mr-auto">
+      <img src="{% static 'img/EC Logo.png' %} " height="52px" width="52px" class="mr-auto ml-1">
+    </div>
+
+    <div class="mr-auto ml-2 text-white navheadtext">
+      <p id="heading"><span>E</span>nergy <span>C</span>lub</p>
+      <p>Centre For Energy and Environment</p>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item px-2 ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/events">Events</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/achievements">Achievements</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/alumni">Alumni</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/team">Team</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid newsletterheader">
+    <div class="headercontainer">
+      <h1>
+        Subscribe to Our Newsletter.
+
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores odit dolorem qui ullam obcaecati, omnis
+        doloribus et deleniti animi sunt?
+      </p>
+      <div class="buttoncontainer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#articlesub">
+          Subscribe
+          <i class="bi bi-arrow-down-square-fill"></i>
+        </button>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModa3">
+          About Newsletter
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade " id="articlesub" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe4"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLabe4">Subscribe to Our Newsletter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-dark">
+          <form action="register" method="POST" class="text-dark">
+            {% csrf_token %}
+            <div class="form-group row">
+              <label for="inputname" class="col-sm-3 col-form-label">Your Name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputname" name="name" placeholder="Your Name" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputemail" class="col-sm-3 col-form-label">Your Email Id</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="inputemail" name="email" placeholder="Your Email Id"
+                  required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputheading" class="col-sm-3 col-form-label">Mobile Number</label>
+              <div class="col-sm-9">
+                <input type="phone" class="form-control" id="inputheading" name="heading"
+                  placeholder="Your Mobile Number" required>
+              </div>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked required>
+              <label class="form-check-label" for="flexCheckChecked">
+                I hereby acknowledge that i accpet the terms & condition listed in newletter docs.
+              </label>
+            </div>
+            <div class="form-group row text-right">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-info">Subscribe </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade " id="exampleModa3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe3"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabe3">Terms & Conditions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-3 maincontainer">
+    <div class="col-md-5 col-11 leftcontainer shadow">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 carouselimage" src="{% static 'img/news1.jpg' %}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carouselimage" src="{% static 'img/news2.jpg' %}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carouselimage" src="{% static 'img/news3.jpg' %}" alt="Third slide">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="col-md-6 col-11 rightmaincontainer">
+      <h2>Download Newsletters</h2>
+      <div class="list-group shadow">
+        {% for newsletter in newsletters %}
+        <a href="{{newsletter.newsletterpdf.url}}" target="_blank"
+          class="newslettercard list-group-item list-group-item-action">
+          <p class="newslettertitle">
+            Newsletter Edition-{{newsletter.editionmonth}},2020
+          </p>
+          <p class=newslettercurator>
+            Curated by {{newsletter.curators}}.
+          </p>
+        </a>
+        {% endfor %}
+        <a href="#" class="newslettercard list-group-item list-group-item-action">
+          <p class="newslettertitle">
+            Newsletter Edition-December,2020
+          </p>
+          <p class=newslettercurator>
+            Curated by Saransh,Bhavya.
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>Contact Us</h6>
+          <p class="text-justify contactinfo">
+            <span>Center for Energy & Environment, Dean Gate</span>
+            <span>Malaviya National Institute of Technology Jaipur</span>
+            <span> <i class="bi bi-telephone-fill"></i>9999889789</span>
+            <span><i class="bi bi-question-circle-fill"></i>@energyclub@mnit.ac.in</span>
+          </p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Sponsors</h6>
+          <ul class="footer-links">
+            <li><a href="https://ishrae.in/" target="_blank">Ishrae</a></li>
+            <li><a href="https://www.ashrae.org/" target="_blank">Ashrae</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="/">About Us</a></li>
+            <li><a href="/newsletter">Newsletters</a></li>
+            <li><a href="/achievements">Achievements</a></li>
+            <li><a href="/learning">PeerLearning</a></li>
+            <li><a href="/events">Events</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+            <a href="/">EnergyClub</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="https://www.facebook.com/EC.MNITJaipur/" target="_blank"><i
+                  class="bi bi-facebook"></i></a></li>
+            <li><a class="twitter" href="mailto:energyclub@mnit.ac.in" target="_blank"><i
+                  class="bi bi-envelope-fill"></i></a></li>
+            <li><a class="dribbble" href="https://www.instagram.com/the_energy_club/" target="_balnk"><i
+                  class="bi bi-instagram"></i></a></li>
+            <li><a class="linkedin" href="https://in.linkedin.com/company/energy-club-mnit-jaipur" target="_blank"><i
+                  class="bi bi-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
